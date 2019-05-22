@@ -13,7 +13,7 @@ body * {
     transform: translate(-50%, -50%);
     height: 70%;
     width: 30%;
-    background-color: gray;
+    background-color: lavender;
 }
 .display-text {
     width: 64%;
@@ -25,7 +25,7 @@ body * {
     /* margin: 0 auto; */
     height: 15%;
     width: 85%;
-    background-color: aqua;
+    background-color: peachpuff;
     left: 7.5%;
 }
 
@@ -36,7 +36,7 @@ body * {
     left: 7.5%;
     height: 15%;
     width: 85%;
-    background-color: bisque;
+    background-color: chartreuse;
 }
 .c-button, .ac-button {
     position: relative;
@@ -46,7 +46,7 @@ body * {
     height: 75%;
     width: 45%;
     display: inline-block;
-    background-color: brown;
+    background-color: rebeccapurple;
     margin: 0px;
 }
 
@@ -55,7 +55,7 @@ body * {
     position: relative;
     height: 60%;
     width: 60%;
-    background-color: blueviolet;
+    background-color: chartreuse;
     top: 28px;
     left: 7.5%;
     margin-top: 8px;
@@ -75,7 +75,7 @@ body * {
     display: inline-block;
     height: 60%;
     width: 24%;
-    background-color: bisque;
+    background-color: chartreuse;
     top: 36px;
     left: 7.5%;
 }
@@ -83,7 +83,7 @@ body * {
     position: relative;
     margin-top: 3px;
     height: 24%;
-    background-color: aqua;
+    background-color: cornflowerblue;
 }
 .center {
     position: absolute;
