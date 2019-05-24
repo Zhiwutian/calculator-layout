@@ -5,23 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="main.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <main class="calculator-body">
         <div class="display-container">
-            <p class="display-text center">Hello Human</p>
+            <p id="display-text" class="display-text center">Hello Human</p>
         </div>
         <div class="c-button-containers">
-            <div class="c-button">
+            <div id="c-button" class="c-button">
                 <p class="center">C</p>
             </div>
-            <div class="ac-button">
+            <div id="ac-button" class="ac-button">
                 <p class="center">AC</p>
             </div>
         </div>
-        <div class="number-block">
+        <div id="number-block" class="number-block">
             <div class="number one">
                 <p class="center">1</p>
             </div>
@@ -52,14 +54,14 @@
             <div class="number zero">
                 <p class="center">0</p>
             </div>
-            <div class="decimal">
+            <div id="decimal" class="decimal">
                 <p class="center">.</p>
             </div>
-            <div class="equals">
+            <div id="equals" class="equals">
                 <p class="center">=</p>
             </div>
         </div>
-        <div class="operator-column">
+        <div id="operator-column" class="operator-column">
             <div class="operator divide">
                 <p class="center">/</p>
             </div>

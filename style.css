@@ -16,7 +16,8 @@ body * {
     background-color: lavender;
 }
 .display-text {
-    width: 64%;
+    text-align: right;
+    width: 98%;
 }
 .display-container {
     position: relative;
