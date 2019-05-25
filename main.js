@@ -27,7 +27,12 @@ function cButtonHandler (event) {
 }
 
 function acButtonHandler (event) {
-    console.log("event", event);
+    calculationArray = [];
+    displayArray = [];
+    stringNumberToPush = "";
+    displayArray[0] = 0;
+    updateDisplay();
+    displayArray = [];
 }
 
 function numberButtonHandler (event) {
@@ -43,9 +48,31 @@ function numberButtonHandler (event) {
     if (calculationArray[calculationArray.length-1] === "+" || calculationArray[calculationArray.length-1] === "-" ||calculationArray[calculationArray.length-1] === "*" || calculationArray[calculationArray.length-1] === "/" ) {
         inputtedNumber = $(event.currentTarget).find("p").text();
         stringNumberToPush += inputtedNumber;
+        displayArray.push(inputtedNumber);
+        updateDisplay();
         console.log(stringNumberToPush);
         return;
     }
+    return;
+
+}
+function operatorButtonHandler (event) {
+    if (stringNumberToPush === "" && !calculationResult) {
+        return;
+    }
+    calculationArray.push(stringNumberToPush);
+    var inputtedOperator = $(event.currentTarget).find("p").text();
+    calculationArray.push(inputtedOperator);
+    displayArray.push(inputtedOperator);
+    updateDisplay();
+    stringNumberToPush = "";
+    console.log(calculationArray);
+
+}
+function updateDisplay () {
+    var displayText = displayArray.join("");
+
+    $("#display-text").text(displayText);
 
 }
 
@@ -61,6 +88,8 @@ function equalsButtonHandler (event) {
     if (calculationArray[calculationArray.length-1] === "+" || calculationArray[calculationArray.length-1] === "-" ||calculationArray[calculationArray.length-1] === "*" || calculationArray[calculationArray.length-1] === "/" ) {
         return;
     }
+    displayArray = [];
+
 
     while (calculationArray.length > 1) {
         for (var calcIndex = 0; calcIndex < calculationArray.length; calcIndex++) {
@@ -85,8 +114,10 @@ function equalsButtonHandler (event) {
         }
 
     }
+    fixedNum = calculationArray[0].toFixed(5);
     stringNumberToPush = calculationArray[0];
     calculationResult = calculationArray[0];
+    displayArray.push(calculationArray[0]);
 
     calculationArray = [];
     updateDisplay();
@@ -114,23 +145,4 @@ function calculate (num1, num2, operator) {
             break;
     }
     return result;
-}
-
-function operatorButtonHandler (event) {
-    if (stringNumberToPush === "" && !calculationResult) {
-        return;
-    }
-    calculationArray.push(stringNumberToPush);
-    var inputtedOperator = $(event.currentTarget).find("p").text();
-    calculationArray.push(inputtedOperator);
-    stringNumberToPush = "";
-    updateDisplay();
-    console.log(calculationArray);
-
-}
-function updateDisplay () {
-    var displayText = displayArray.join("");
-
-    $("#display-text").text(displayText);
-
 }
